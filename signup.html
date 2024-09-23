@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./favicons/favicon-16x16.png">
+    <link rel="stylesheet" href="./css/signup.css">
+    <title>Cadastro - PokéDex</title>
+    <!-- Importar o SDK do Firebase -->
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js';
+        import { getAuth, createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js';
+
+        // Configuração do Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyDSqnhF7vO8b0xuSL9rwdFtSqBf39QkGVA",
+            authDomain: "pokepage-83dd4.firebaseapp.com",
+            projectId: "pokepage-83dd4",
+            storageBucket: "pokepage-83dd4.appspot.com",
+            messagingSenderId: "643564589473",
+            appId: "1:643564589473:web:f81d9fc8e8490e6897fbe0",
+            measurementId: "G-CRLF9DSEZ7"
+        };
+
+        // Inicializa o Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const signupForm = document.getElementById("signupForm");
+
+            signupForm.addEventListener("submit", async (event) => {
+                event.preventDefault();
+                const email = document.getElementById("emailInput").value;
+                const password = document.getElementById("passwordInput").value;
+
+                try {
+                    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                    // Usuário cadastrado com sucesso
+                    alert("Usuário cadastrado com sucesso.");
+                    window.location.href = "index.html";
+                } catch (error) {
+                    // Erro ao cadastrar
+                    alert("Erro ao cadastrar: " + error.message);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <main class="font">
+        <form id="signupForm" class="form">
+            <h2 class="cad">Cadastro</h2>
+            <input type="email" id="emailInput" class="input__search" placeholder="Insira seu e-mail" required />
+            <input type="password" id="passwordInput" class="input__search" placeholder="Insira sua senha" required />
+            <button type="submit" class="button">Cadastrar</button>
+            <p>Já tem uma conta? <a href="index.html">Faça login</a></p>
+        </form>
+
+        <img src="./images/PokeLogin.png" alt="pokedex" class="pokedex2">
+    </main>
+</body>
+</html>

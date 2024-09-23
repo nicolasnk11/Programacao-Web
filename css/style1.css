@@ -1,0 +1,102 @@
+
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-image: url('images/603479.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 20px 0;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #f0a500;
+    }
+
+    .logo {
+      display: block;
+      margin: 40px auto;
+      max-width: 200px;
+    }
+
+    dl.p {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.8);
+      border-radius: 10px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    dl.p dt {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-top: 20px;
+    }
+
+    dl.p dd {
+      font-size: 1rem;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: block;
+      width: 200px;
+      text-align: center;
+      margin: 40px auto;
+      padding: 15px 20px;
+      background-color: #f0a500;
+      color: #000;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 5px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #d18b00;
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 20px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    footer p {
+      color: #fff;
+      font-size: 0.9rem;
+    }
